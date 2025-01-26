@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0 1rem;
+
+  background-color: #e4e4e4;
+
+  font-family: system-ui, sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+*:focus-visible {
+  outline: 2px solid darkcyan;
+  outline-offset: 0.2rem;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  margin-inline: auto;
+  padding-block: 0.5rem;
+  padding-inline: 0.5rem;
+
+  /* BUG: this textarea is larger than it's container. It needs to have the same width. */
+}
+
+button {
+  border: 2px solid black;
+  border-top-color: white;
+  border-left-color: white;
+  border-radius: 0.4rem;
+  padding: 0.25rem 0.5rem;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  padding: 0.5rem 0;
+  gap: 1rem;
+}
+
+.result:empty::before {
+  content: 'Click "Cleanup"';
+  display: block;
+  border: 1px solid red;
+
+  padding-block: 1rem;
+  padding-inline: 2rem;
+
+  color: red;
+  font-weight: bolder;
+}

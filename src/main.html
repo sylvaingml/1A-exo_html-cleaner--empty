@@ -1,0 +1,70 @@
+<h1>Cleanup old HTML</h1>
+
+<h2>What to do?</h2>
+<details open>
+  <summary>
+    <!-- TODO label should reflect the result of action
+      - when collapsed: "show details"
+      - when expanded: "hide details"
+    -->
+    <span>Hide or show details</span>
+  </summary>
+
+  <p>
+    This app shows a text input area filled with some HTML that includes
+    obsolete tags.
+  </p>
+  <p>Your goal is to implement:</p>
+  <ol>
+    <li>
+      complete the transform action to modernize this content;
+      <ul>
+        <li>Replace all <code>b</code> tags with <code>strong</code>.</li>
+        <li>Replace all <code>i</code> tags with <code>em</code>.</li>
+      </ul>
+    </li>
+    <li>
+      replace dates in ISO format (YYYY/mm/dd) to textual form using
+      <code>toDateString()</code> method;
+    </li>
+    <li>
+      Could you propose an alternative solution for this angular application?
+    </li>
+    <li>Can you fix the few bugs identified in this project?</li>
+  </ol>
+
+  <p>Please respect the following constraints:</p>
+  <ul>
+    <li>Use regular expression to implement the tag replacement.</li>
+    <li>Limit the processing to a minimal number of replace action.</li>
+  </ul>
+</details>
+
+<h2>Input</h2>
+
+<textarea #userInput rows="12">
+  <h1>Old Fashioned</h1>
+
+  <p>
+    <b>HTML</b> came out in <i>1991</i>.
+    It takes root in <b>SGML</b> markup language and was invented
+    at the <b>CERN</b> by <i>Sir Tim Berners-Lee</i>,
+    born on 1955/06/08.
+  </p>
+
+  <p>
+    We can be sure that it was not <i>designed</i> to
+    become the seed of a whole new way to produce applications
+    as we do today.
+    The initial idea was <i>only</i> to be a document format.
+  </p>
+</textarea>
+
+<div class="actions">
+  <button type="button" (click)="doCleanup()">Cleanup</button>
+  <button type="button" (click)="doReset()">Reset</button>
+</div>
+
+<h2>Modern HTML</h2>
+
+<pre class="result" [innerText]="modernHTML"></pre>
